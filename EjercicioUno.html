@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio Uno</title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		body
+		{
+			background-color: #F25A0F;
+		}
+		h1,p
+		{
+			color: white;
+			border-style: double;
+			width: 500px;
+			margin: auto;
+		}
+		.groupBox 
+		{
+    		margin: auto;
+    		right: 0px;
+    		width: 400px;
+    		border: 10px solid #73AD21;
+    		padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<h1>Departamento de facturación</h1>
+		<br>
+		<p>Enunciado:<br>
+			1.	Para el departamento de facturación:<br> 
+			A.	Ingresar tres precios de productos y mostrar la suma de los mismos.<br> 
+			B.	Ingresar tres precios de productos y mostrar el promedio de los mismos.<br> 
+			C.	ingresar tres precios de productos y mostrar precio final (más IVA 21%).</p>
+			<br>
+		<div class="groupBox">
+			<input type="text" name="txtPrecioUno" placeholder="Ingrese Precio" id="valorUno"><br><br>	
+			<input type="text" name="txtPrecioDos" placeholder="Ingrese Precio" id="valorDos"><br><br>
+			<input type="text" name="txtPrecioTres" placeholder="Ingrese Precio" id="valorTres"><br><br>
+			<input type="button" name="btnSumar" value="Sumar" onclick="CalcularSuma()"><br><br>
+			<!--<input type="button" name="btnSumar" value="Sumar" onclick="CalcularSuma(parseInt(document.getElementById('valorUno'),parseInt(document.getElementById('valorDos'),parseInt(document.getElementById('valorTres')))"><br><br>-->
+			<input type="button" name="btnPromedio" value="Promedio" onclick="CalcularPromedio()"><br><br>
+			<input type="button" name="btnPrecioFinal" value="Precio Final" onclick="CalcularPrecioFinal()"><br><br>
+			<h2 id="resultado"></h2>
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+	function CalcularSuma()
+	{
+		var a=parseInt(document.getElementById("valorUno").value);
+		var b=parseInt(document.getElementById("valorDos").value);
+		var c=parseInt(document.getElementById("valorTres").value);
+		var resultadoSuma=a+b+c;
+		//alert(resultadoSuma);
+		document.getElementById("resultado").innerHTML="El resultado de la suma es: "+resultadoSuma;
+		return resultadoSuma;
+	}	
+	/*function CalcularSuma(a, b, c)
+	{
+		var total=a+b+c
+		document.getElementById("resultado").innerHTML="El resultado es: "+total;
+	}*/
+	function CalcularPromedio()
+	{
+		var resultadoPromedio=CalcularSuma()/3;
+		document.getElementById("resultado").innerHTML="El resultado del promedio es: "+resultadoPromedio;
+	}
+	function CalcularPrecioFinal()
+	{
+		var resultadoPrecioFinal=CalcularSuma()*1.21;
+		document.getElementById("resultado").innerHTML="El precio final es: "+resultadoPrecioFinal;
+	}	
+</script>
+</html>

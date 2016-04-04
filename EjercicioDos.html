@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio Dos</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+	<form>
+		<h1>Departamento de construcción</h1><br>
+		<p>Enunciado:<br>
+		2.	Para el departamento de Construcción:<br> 
+		A.	Mostrar la cantidad de alambre a comprar si se ingresara el largo y el ancho de un terreno rectangular y se debe alambra con tres hilos de alambre.<br> 
+		B.	Mostrar la cantidad de alambre a comprar si se ingresara el radio de un terreno circular y se debe alambra con tres hilos de alambre.<br> 
+		C.	Para hacer un contrapiso de 1m x 1m se necesitan 2 bolsas de cemento y 3 de cal, debemos mostrar cuantas bolsas se necesitan de cada<br> uno para las medidas del terreno rectangular.</p><br>
+		<div class="groupBox">
+			<input type="text" name="txtLargo" placeholder="Largo del terreno" id="valorUno"><br><br>	
+			<input type="text" name="txtAncho" placeholder="Ancho del terreno" id="valorDos"><br><br>
+			<input type="text" name="txtRadio" placeholder="Radio del terreno" id="valorTres"><br><br>
+			<input type="button" name="btnRectangulo" value="A- Rectángulo De Alambre" onclick="CalcularSuma()"><br><br>
+			<input type="button" name="btnCirculo" value="B- Circulo De Alambre" onclick="CalcularRadio()"><br><br>
+			<input type="button" name="btnMateriales" value="C- Materiales De Contrapiso" onclick="CalcularBolsas()"><br><br>
+			<h2 id="resultado"></h2>
+		</div>
+	</form>
+</body>
+<script type="text/javascript">	
+	function CalcularSuma()
+	{
+		var a=parseInt(document.getElementById("valorUno").value);
+		var b=parseInt(document.getElementById("valorDos").value);
+		if (!isNaN(a) && !isNaN(b))
+		{
+			var resultadoSuma=(a*2+b*2)*3;
+			document.getElementById("resultado").innerHTML="Se debe comprar "+resultadoSuma+" metros de alambre.";
+			return resultadoSuma;
+		}	
+		else
+		{
+			alert("Complete los campos!");
+		}
+	}	
+	function CalcularRadio()
+	{		
+		var a=parseInt(document.getElementById("valorTres").value);
+		//var pi=&#928;
+		if (!isNaN(a))
+		{
+			var resultado=(3.14*2)*3;
+			document.getElementById("resultado").innerHTML="Se debe comprar "+resultado+" metros de alambre.";
+			return resultadoSuma;
+		}			
+		else
+		{
+			alert("Complete los campos!");
+		}
+	}	
+	function CalcularBolsas()
+	{
+		var a=parseInt(document.getElementById("valorUno").value);
+		var b=parseInt(document.getElementById("valorDos").value);
+		if (!isNaN(a) && !isNaN(b))
+		{
+			var superficie=CalcularSuperficie(a,b);
+			var bolsasCemento=superficie*2;
+			var bolsasCal=superficie*3;
+			document.getElementById("resultado").innerHTML="Se deben comprar "+bolsasCemento+" bolsas de cemento y "+bolsasCal+" bolsas de cal.";
+			return resultadoSuma;
+		}	
+		else
+		{
+			alert("Complete los campos!");
+		}	
+	}
+	function CalcularSuperficie(altura, base)
+	{
+		return base*altura;
+	}
+</script>
+</html>

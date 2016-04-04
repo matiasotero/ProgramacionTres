@@ -1,0 +1,19 @@
+body
+		{
+			background-color: #F25A0F;
+		}
+		h1,p
+		{
+			color: white;
+			border-style: double;
+			width: 500px;
+			margin: auto;
+		}
+		.groupBox 
+		{
+    		margin: auto;
+    		right: 0px;
+    		width: 400px;
+    		border: 10px solid #73AD21;
+    		padding: 10px;
+		}

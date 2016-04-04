@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio Tres</title>
+	<meta charset="UTF-8">
+	<!--<link rel="stylesheet" type="text/css" href="estiloOctavio.css">
+	<link rel="stylesheet" type="text/css" href="animacion.css">-->
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+	<h1>Departamento de pinturas</h1><br>
+	<p>Enunciado:<br>
+	3.	Para el departamento de Pinturas:<br>
+	A.	Al ingresar una temperatura en Fahrenheit debemos mostrar la temperatura en Centígrados con un mensaje concatenado (ej.: " 32 Fahrenheit son 0 centígrados").<br>
+	B.	Al ingresar una temperatura en Centígrados debemos mostrar la temperatura en Fahrenheit (ej.: "0 centígrados son 32 Fahrenheit ").</p><br>
+	<div class="groupBox">
+		<input type="text" name="txtTemperatura" placeholder="Ingrese temperatura" id="temp"><br><br>
+		<input type="button" name="btnFarenheitCentrigados" value="A- De Farenheit a Centigrados" onclick="CalcularDeFarenheitACentigrados()"><br><br>	
+		<input type="button" name="btnCentrigadosFarenheit" value="B- De Centigrados a Farenheit" onclick="CalcularDeCentigradosAFarenheit()">
+		<h2 id="mensaje"></h2>
+	</div>
+</body>
+<script type="text/javascript">
+
+	function CalcularDeFarenheitACentigrados()
+	{
+		if(ValidarTxtTemperatura(document.getElementById("temp").value))
+		{
+			var a=parseFloat(document.getElementById("temp").value);
+			if (!isNaN(a)) 
+			{
+				var resultado=(a- 32)/1.8; 
+				document.getElementById("mensaje").innerHTML=resultado+" ºC"; 
+			}
+			else
+			{
+				alert("Valor ingresado incorrecto!");
+			}
+		}
+	}
+
+	function CalcularDeCentigradosAFarenheit()
+	{
+		if(ValidarTxtTemperatura(document.getElementById("temp").value))
+		{			
+			var a=parseFloat(document.getElementById("temp").value);
+			if (!isNaN(a)) 
+			{
+				var resultado=a*1.8+32;
+				document.getElementById("mensaje").innerHTML=resultado+" ºF"; 
+			}
+			else
+			{
+				alert("Valor ingresado incorrecto!");
+			}
+		}	
+	}
+
+	function ValidarTxtTemperatura(a)
+	{			
+		if(a == "")
+		{
+			alert("Campo vacio!");
+			return false;
+		}
+		return true;
+	}
+
+</script>
+</html>
