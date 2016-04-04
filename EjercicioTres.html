@@ -13,12 +13,15 @@
 	3.	Para el departamento de Pinturas:<br>
 	A.	Al ingresar una temperatura en Fahrenheit debemos mostrar la temperatura en Centígrados con un mensaje concatenado (ej.: " 32 Fahrenheit son 0 centígrados").<br>
 	B.	Al ingresar una temperatura en Centígrados debemos mostrar la temperatura en Fahrenheit (ej.: "0 centígrados son 32 Fahrenheit ").</p><br>
+	<form>
 	<div class="groupBox">
-		<input type="text" name="txtTemperatura" placeholder="Ingrese temperatura" id="temp"><br><br>
-		<input type="button" name="btnFarenheitCentrigados" value="A- De Farenheit a Centigrados" onclick="CalcularDeFarenheitACentigrados()"><br><br>	
-		<input type="button" name="btnCentrigadosFarenheit" value="B- De Centigrados a Farenheit" onclick="CalcularDeCentigradosAFarenheit()">
-		<h2 id="mensaje"></h2>
-	</div>
+			<!--<input type="time" value="" required><br><br>-->
+			<input type="text" name="txtTemperatura" placeholder="Ingrese temperatura" id="temp" required title="Error"><br><br>
+			<input type="submit" name="btnFarenheitCentrigados" value="A- De Farenheit a Centigrados" onclick="CalcularDeFarenheitACentigrados()"><br><br>	
+			<input type="submit" name="btnCentrigadosFarenheit" value="B- De Centigrados a Farenheit" onclick="CalcularDeCentigradosAFarenheit()">
+			<h2 id="mensaje"></h2>
+		</div>
+	</form>
 </body>
 <script type="text/javascript">
 
